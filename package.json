@@ -1,0 +1,25 @@
+{
+  "name": "promises_bluebird_katas",
+  "version": "1.0.0",
+  "description": "Katas around promises using Bluebird implementation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jimleroyer/promises_bluebird_katas.git"
+  },
+  "author": "Jimmy Royer <jimleroyer@gmail.com> (https://jimleroyer.wordpress.com/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jimleroyer/promises_bluebird_katas/issues"
+  },
+  "homepage": "https://github.com/jimleroyer/promises_bluebird_katas#readme",
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "express": "^4.15.2",
+    "lodash": "^4.17.4",
+    "request": "^2.81.0"
+  }
+}
