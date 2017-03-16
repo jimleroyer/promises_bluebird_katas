@@ -25,26 +25,20 @@ class Maio {
     }
 
     getTipsPromise() {
-        // 1- Create promise here
-        // ...
+        return new Promise((resolve, reject) => {
+            request(`${MAIO_URL}/v1/content/tips`,
+                requestOptions,
+                function (error, response, body) {
+                    if (error) {
+                        reject(`Could not connect to the MAIO server: ${error}`);
+                    }
+                    if (response.statusCode != 200) {
+                        reject(`Non successful response (${response.statusCode}) from the MAIO server: ${body}`);
+                    }
 
-        request(`${MAIO_URL}/v1/content/tips`,
-            requestOptions,
-            function (error, response, body) {
-                if (error) {
-                    // 2- Reject promise
-                    // ...
-                }
-                if (response.statusCode != 200) {
-                    // 3- Reject promise
-                    // ...
-                }
-
-                // 4- Resolve promise
-                // JSON.parse(...)
-            });
-
-        // 5- Don't forget to return the promise!
+                    resolve(JSON.parse(body));
+                });
+        });
     }
 
 }
