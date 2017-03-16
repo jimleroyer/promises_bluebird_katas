@@ -25,7 +25,7 @@ app.get('/', function (req, res) {
  * First Kata is to explore how a promise is created. How does it make resolution
  * or rejection happen?
  *
- * The task is to transform the maio#getTips function which receives a callback
+ * The task is to transform the maio#getTipsPromise function which receives a callback
  * into a function that returns a promise.
  */
 app.get('/kata-01', function (req, res) {
