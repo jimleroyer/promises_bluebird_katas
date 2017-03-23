@@ -63,7 +63,7 @@ app.get('/kata-01', function (req, res) {
 app.get('/kata-02', function (req, res) {
 
     // 1- Get the tips from MAIO, then pick the 1st one only.
-    // maio.getTipsPromise()...
+    // maio.getTipsPromise()
 
     // 2- From the first tip, get its geo ID and get the geographic region
     //    with a call to GAIA: gaia.getRegion(geoId)
@@ -95,4 +95,27 @@ app.get('/kata-03', function (req, res) {
     // 5- Send the list of enriched tips with geo name back to the client.
 
     res.json({msg: 'Send back a response!'});
+});
+
+/**
+ * Fourth kata, we'll take things in reverse. We want to transform a promise
+ * into a callback. This is to test interoperability between the old-fashioned
+ * way with callbacks and the promise API way.
+ */
+app.get('/kata-04', function (req, res) {
+
+    function showTips(tips) {
+        res.send(tips);
+    }
+
+    function showError(error) {
+        res.status = 503;
+        res.send(error);
+    }
+
+    // 1- Call the maio.getTipsPromise() method to get a promise.
+
+    // 2- Chain the promise result to the provided callback that will
+    //    funnel the result to the browser.
+
 });
