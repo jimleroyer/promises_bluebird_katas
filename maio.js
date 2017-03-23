@@ -32,11 +32,12 @@ class Maio {
                     if (error) {
                         reject(`Could not connect to the MAIO server: ${error}`);
                     }
-                    if (response.statusCode != 200) {
+                    else if (response && response.statusCode != 200) {
                         reject(`Non successful response (${response.statusCode}) from the MAIO server: ${body}`);
                     }
-
-                    resolve(JSON.parse(body));
+                    else {
+                        resolve(JSON.parse(body));
+                    }
                 });
         });
     }
