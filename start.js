@@ -83,16 +83,14 @@ app.get('/kata-03', function (req, res) {
     // 1- Get all the tips from MAIO.
     // maio.getTipsPromise()...
 
-    // 2- For each tip, create a promise...
-
-    // 3- ...and for each of these promise, chain another promise to get the
+    // 2- For each tips, chain to another promise to get the
     //    geographic region name: enrich the tip with the property of the
     //    region name under `geoName` field.
 
-    // 4- Wait on all promises to end altogether, and combine them all into
+    // 3- Wait on all promises to end altogether, and combine them all into
     //    one.
 
-    // 5- Send the list of enriched tips with geo name back to the client.
+    // 4- Send the list of enriched tips with geo name back to the client.
 
     res.json({msg: 'Send back a response!'});
 });
