@@ -66,12 +66,22 @@ app.get('/kata-02', function (req, res) {
     // maio.getTipsPromise()
 
     // 2- From the first tip, get its geo ID and get the geographic region
-    //    with a call to GAIA: gaia.getRegion(geoId)
+    //    with a call to GAIA: gaia.getRegionName(geoId)
 
     // 3- Append the region name as a property to the 1st tip, then return
     //    the enriched tip back in the response.
 
-    res.json({msg: 'Send back a response!'});
+    maio.getTipsPromise().then(function (response) {
+        let firstTip = response[0];
+        return gaia.getRegionName(firstTip.geoId).then(function (geoName) {
+            firstTip.geoName = geoName
+            return response;
+        });
+    }).then(function (tipWithRegionName) {
+        res.send(tipWithRegionName)
+    }).catch(function (error) {
+        res.send(`Caught an error while trying to contact MAIO: ${error}`);
+    });
 });
 
 /**
