@@ -14,3 +14,8 @@ A serie of katas around the [Promise](https://developers.google.com/web/fundamen
 # How to run
 
 1. npm start
+
+# Reading Material
+
+* [
+JavaScript Promises: an Introduction](https://developers.google.com/web/fundamentals/getting-started/primers/promises)
