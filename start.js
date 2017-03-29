@@ -108,24 +108,14 @@ app.get('/kata-03', function (req, res) {
 });
 
 /**
- * Fourth kata, we'll take things in reverse. We want to transform a promise
- * into a callback. This is to test interoperability between the old-fashioned
+ * Fourth kata, we'll take things in reverse. We want to a promise to interact
+ * with a callback. This is to test interoperability between the old-fashioned
  * way with callbacks and the promise API way.
  */
 app.get('/kata-04', function (req, res) {
 
-    function showTips(tips) {
-        res.send(tips);
-    }
-
-    function showError(error) {
-        res.status = 503;
-        res.send(error);
-    }
-
     // 1- Call the maio.getTipsPromise() method to get a promise.
 
-    // 2- Chain the promise result to the provided callback that will
-    //    funnel the result to the browser.
+    // 2- Return the result via the expressjs callback!
 
 });
