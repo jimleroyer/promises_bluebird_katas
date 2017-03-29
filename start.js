@@ -108,11 +108,33 @@ app.get('/kata-03', function (req, res) {
 });
 
 /**
- * Fourth kata, we'll take things in reverse. We want to a promise to interact
+ * Fourth kata, we'll collect all GEO names aggregated under author's name.
+ *
+ * For example:
+ *
+ * [
+ *  {
+ *      author: 't-eomara',
+ *      geos: [
+ *          'Musée des beaux-arts',
+ *          'Centre Bell'
+ *      ]
+ *  }
+ * ]
+ *
+ * The goal is to make sure you don't rework any response object in-memory
+ * but rather treat the promise chaining as a pipeline of data.
+ */
+app.get('kata-04', function (req, res) {
+
+});
+
+/**
+ * Fifth kata, we'll take things in reverse. We want to a promise to interact
  * with a callback. This is to test interoperability between the old-fashioned
  * way with callbacks and the promise API way.
  */
-app.get('/kata-04', function (req, res) {
+app.get('/kata-05', function (req, res) {
 
     // 1- Call the maio.getTipsPromise() method to get a promise.
 
